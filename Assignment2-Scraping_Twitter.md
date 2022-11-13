@@ -1,7 +1,7 @@
 # Scraping Twitter:
 
 ## Tables: 
-![Class Diagram](images/Tables.jpg)
+![Class Diagram](images/tables.jpg)
 
 ## 15 Questions (5 each team member):
 1. Search universities that provide DS courses.
