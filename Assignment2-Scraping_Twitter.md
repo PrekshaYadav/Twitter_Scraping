@@ -58,7 +58,9 @@ SQL Query :
 
 Relational Algebra:
 
-![Class Diagram](images/A1.jpg)
+    τ(ranking
+	σ(ranking<4(University)))
+
 
 3. Search for the universities with fees less than 20000.
 
@@ -195,7 +197,11 @@ SQL Query :
 
 Relational Algebra:
 
-![Class Diagram](images/A2.jpg)
+    τ(Ranking
+	π(University_name
+		σ(University_name LIKE 'U%'
+			(University))))
+
 
 8. University with lowest cost of living along with the best ranking.
 
@@ -223,7 +229,10 @@ SQL Query :
 
 Relational Algebra:
 
-![Class Diagram](images/A3.jpg)
+    π(University_name
+	τ(Ranking,cost_of_living
+		σ(Ranking<2
+		 (University))))
 
 9. University with low fees and good return of interest.
 Description :A student searching for a university with low fees and good ROI
