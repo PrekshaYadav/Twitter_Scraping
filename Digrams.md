@@ -8,3 +8,8 @@ ER Diagram :
 
 ![Class Diagram](images/er.jpg)
 
+Physical Diagram :
+
+![Class Diagram](images/phy.jpg)
+
+
