@@ -4,3 +4,7 @@ Conceptual ER Diagram :
 
 ![Class Diagram](images/con_ER.jpg)
 
+ER Diagram :
+
+![Class Diagram](images/er.jpg)
+
