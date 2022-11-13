@@ -56,6 +56,10 @@ SQL Query :
 
 ![Class Diagram](images/Q2.jpg)
 
+Relational Algebra:
+
+![Class Diagram](images/A1.jpg)
+
 3. Search for the universities with fees less than 20000.
 
 Description : A student searches for universities with fees less than 20000.
@@ -189,6 +193,10 @@ SQL Query :
 
 ![Class Diagram](images/Q7.jpg)
 
+Relational Algebra:
+
+![Class Diagram](images/A2.jpg)
+
 8. University with lowest cost of living along with the best ranking.
 
 Description :A student searching for a university with lowest cost and best ranking.
@@ -213,6 +221,10 @@ SQL Query :
 
 ![Class Diagram](images/Q8.jpg)
 
+Relational Algebra:
+
+![Class Diagram](images/A3.jpg)
+
 9. University with low fees and good return of interest.
 Description :A student searching for a university with low fees and good ROI
 
@@ -235,6 +247,9 @@ SQL Query :
 
 ![Class Diagram](images/Q9.jpg)
 
+Relational Algebra :
+
+    π(fees, Average_salary DESC(σtrue(University)))
 
 
 10. Finding the latest tweets related to the university
@@ -259,6 +274,9 @@ SQL Query :
     
     select tweets.tweet_id, tweets.tweet_text tweets.created_date,university.university_name from tweets left join university on tweets.tweet_id = university.tweet_Id where university.University_name = 'University of Arizona' order by created_date desc;
 
+Relational Algebra :
+
+    τ(created_date desc (π(tweets.tweet_id, tweets.tweet_text, tweets.created_date, university.university_name (tweets ⋊(tweets.tweet_id = university.tweet_Id) university (σ university.University_name = 'University of Arizona')))))
 
 
 ![Class Diagram](images/Q10.jpg)
@@ -290,6 +308,11 @@ SQL Query :
 
 ![Class Diagram](images/Q11.jpg)
 
+Relational Algebra :
+
+    σ(ranking BETWEEN 20 and 30 (University))
+
+
 12. View the universities which has CGPA cutoff of 3.5 and above
 
 Description: User views the universities with 3.5 cutoff.
@@ -314,6 +337,9 @@ SQL Query :
 
     select * from university where GPA >= 3.5;
 
+Relational Algebra :
+
+    σ(GPA >= 3.5(University))
 
 ![Class Diagram](images/Q12.jpg)
 
@@ -340,6 +366,11 @@ Error: The universities data not available.
 SQL Query : 
 
     select * from University where course = 'Computer science and Engineering';
+
+
+Relational Algebra :
+    
+    σcourse = "Data Science"(University)
 
 ![Class Diagram](images/Q13.jpg)
 
@@ -369,6 +400,11 @@ SQL Query :
 
 ![Class Diagram](images/Q14.jpg)
 
+Relational Algebra :
+
+    σ(IELTS >= 7(University))
+
+
 
 15. View the twitter username for the tweets related to Princeton University.
 
@@ -393,6 +429,13 @@ SQL Query:
 
     select tweeter_handle from tweets left join university on tweets.tweet_Id = university.tweet_Id where university.University_name = 'Princeton University';
 
+
+Relational Algebra :
+
+    π(tweets.tweeter_handle (tweets ⋊(tweets.tweet_id = university.tweet_Id) university (σ university.University_name = 'Princeton University'))))
+
+
+
 ![Class Diagram](images/Q15.jpg)
 
 
@@ -404,6 +447,9 @@ SQL :
     select tweets.tweeter_handle from tweets left join tweet_url 
     on tweets.Tweet_Id = tweet_url.tweet_Id  where tweet_url.url = 'https://twitter.com/Uni_Shortlistin/status/1590597710973140993';
 
+Relational Algebra :
+
+    π(tweets.tweeter_handle (tweets ⋊(tweets.tweet_id = tweet_url.tweet_Id) tweet_url (σ tweet_url.url = 'https://twitter.com/Uni_Shortlistin/status/1590597710973140993'(tweets)))))
 
 ![Class Diagram](images/QA1.jpg)
 
@@ -413,6 +459,10 @@ SQL :
 SQL : 
 
     select tweets.created_date from tweets left join tweet_url on tweets.Tweet_Id = tweet_url.tweet_Id where tweet_url.url = 'https://twitter.com/Uni_Shortlistin/status/1590597710973140993';
+
+Relational Algebra :
+
+    π(tweets.tweets.created_date (tweets ⋊(tweets.tweet_id = tweet_url.tweet_Id) tweet_url (σ tweet_url.url = 'https://twitter.com/Uni_Shortlistin/status/1590597710973140993'(tweet)))))
 
 
 ![Class Diagram](images/QA2.jpg)
